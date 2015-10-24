@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /fileHolder
+
+RewriteCond %{REQUEST_URI} ^sistem.*
+RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+RewriteCond %{REQUEST_URI} ^application.*
+RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+RewriteCond %{REQUEST_FILNAME} !-f
+RewriteCond %{REQUEST_FILNAME} !-d
+RewriteCond $1 !^(index\.php|img|images|robots\.txt|css|js|system)
+RewriteRule ^(.*)$ index.php?/$1 [L]
+</IfModule>
