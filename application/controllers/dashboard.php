@@ -5,7 +5,9 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		$var['var'] = "Petar";
-		$this->load->view('dashboard_template', $var);
+		$data['title'] = "Dashboard";
+		$this->load->view('header/header_view', $data);
+		$this->load->view('dashboard_template', $data);
+		$this->load->view('footer/footer_view', $data);
 	}
 }
