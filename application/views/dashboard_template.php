@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>fileHolder - Index</title>
+	<title>fileHolder - Dashboard</title>
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- bootstrap 3.0.2 -->
     <link href="<?php echo URL ?>css/custom.css" rel="stylesheet" type="text/css" />
