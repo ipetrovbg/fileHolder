@@ -26,7 +26,7 @@ class Dashboard extends CI_Controller {
 
 		    $data['user_info'] = $this->user_model->getInfo($data['id']);
 
-			$data['title'] = $this->dashboard_model->shorter("Dashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard Dashboard", 30);
+			$data['title'] = "Dashboard";
 
 			$this->load->view('header/header_view', $data);
 			$this->load->view('dashboard_template', $data);

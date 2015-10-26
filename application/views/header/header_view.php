@@ -27,7 +27,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div id="nav_user">
 				<div id="nav_user_pic"><img src="<?php echo URL ?>img/nav_user_pic.png" /></div>
-				<div id="nav_user_name"><span><?php echo $user_info["full_name"]; ?></span></div>
+				<div id="nav_user_name">
+					<span>
+						<?php 
+						 if ($username) {
+						 	echo $user_info["full_name"]; 
+						 }
+						
+						?>
+					</span>
+				</div>
 				<a href=""><div id="nav_user_arrow_down"></div></a>
 			</div>
 			<div class="cleared"></div>
