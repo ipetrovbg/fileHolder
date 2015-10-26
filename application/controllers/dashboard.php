@@ -8,17 +8,36 @@ class Dashboard extends CI_Controller {
 
 		$this->load->model('dashboard_model');
 		$this->load->model('files_model');
+		$this->load->model('user_model');
 
 	}
 
 	public function index()
 	{
-		
-		$data['files'] = $this->files_model->getAllUserFiles();
-		$data['title'] = $this->dashboard_model->shorter("Dashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard Dashboard", 30);
+		if($this->session->userdata('logged_in'))
+		   {
+		    $session_data = $this->session->userdata('logged_in');
 
-		$this->load->view('header/header_view', $data);
-		$this->load->view('dashboard_template', $data);
-		$this->load->view('footer/footer_view', $data);
+		    $data['username'] = $session_data['username'];
+
+		    $data['id'] = $session_data['id'];
+
+		    $data['files'] = $this->files_model->getAllUserFiles($data['id']);
+
+		    $data['user_info'] = $this->user_model->getInfo($data['id']);
+
+			$data['title'] = $this->dashboard_model->shorter("Dashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard DashboardDashboard Dashboard", 30);
+
+			$this->load->view('header/header_view', $data);
+			$this->load->view('dashboard_template', $data);
+			$this->load->view('footer/footer_view');
+		   }
+		   else
+		   {
+		     //If no session, redirect to login page
+		     redirect('login', 'refresh');
+		   }
+		
+		
 	}
 }

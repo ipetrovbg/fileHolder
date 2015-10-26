@@ -12,9 +12,12 @@ class Files_Model extends CI_Model
     }
 
 
-	public function getAllUserFiles()
+	public function getAllUserFiles($arg)
 	{
-		$query = $this->db->get('files');
+		$query = $this->db->select('*');
+		$query = $this->db->from('files');
+		$query = $this->db->where('id_user', $arg);
+		$query = $this->db->get();
 
         return $query->result_array();
 	}

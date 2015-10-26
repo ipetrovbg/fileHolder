@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="main-container">
 	<div id="navigation">
 		<div class="wraper">
-			<div id="logo"><div id="logo_img"></div></div>
+			<a href="<?php echo URL; ?>"><div id="logo"><div id="logo_img"></div></div></a>
 			<div id="search_section">
 				<div id="search_icon"></div>
 				<div id="search_form">
@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<div id="nav_user">
 				<div id="nav_user_pic"><img src="<?php echo URL ?>img/nav_user_pic.png" /></div>
-				<div id="nav_user_name"><span>Natasha Joe</span></div>
+				<div id="nav_user_name"><span><?php echo $user_info["full_name"]; ?></span></div>
 				<a href=""><div id="nav_user_arrow_down"></div></a>
 			</div>
 			<div class="cleared"></div>

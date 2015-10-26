@@ -3,7 +3,7 @@
 	<div id="user_section">
 		<div class="user_wraper">
 			<div id="user_section_pic"><img src="<?php echo URL ?>img/nav_user_pic.png" /></div>
-			<div id="user_section_name"><span>Natasha Joe</span></div>
+			<div id="user_section_name"><span><?php echo $user_info["full_name"]; ?></span></div>
 			<a href=""><div id="user_section_arrow_down"></div></a>
 			<div class="cleared"></div>
 		</div>
@@ -20,7 +20,7 @@
 	
 		<div class="wraper_content">
 			<div id="folders">
-				<div class="main_title_folders">Folders:</div>
+				<div class="main_title_folders">Folders: </div>
 				<a href="1">
 				<div class="folder">
 					<div class="file_wrapper">
