@@ -17,6 +17,7 @@ class Files_Model extends CI_Model
 		$query = $this->db->select('*');
 		$query = $this->db->from('files');
 		$query = $this->db->where('id_user', $arg);
+
 		$query = $this->db->get();
 
         return $query->result_array();

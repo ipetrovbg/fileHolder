@@ -3,7 +3,8 @@
 	<div id="user_section">
 		<div class="user_wraper">
 			<div id="user_section_pic"><img src="<?php echo URL ?>img/nav_user_pic.png" /></div>
-			<div id="user_section_name"><span><?php echo $user_info["full_name"]; ?></span></div>
+			<div id="user_section_name"><span><?php echo $user_info["full_name"]; ?></span>
+				<p><?php echo count($files); ?></p></div>
 			<a href=""><div id="user_section_arrow_down"></div></a>
 			<div class="cleared"></div>
 		</div>
