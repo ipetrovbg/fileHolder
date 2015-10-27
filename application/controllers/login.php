@@ -16,21 +16,31 @@ class Login extends CI_Controller
 
 	public function index()
 	 {
-	 	if(!$this->session->userdata('logged_in')){ 
-	 	$session_data = $this->session->userdata('logged_in');
-	 	$data['username'] = $session_data['username'];
-	 	$data['id'] = $session_data['id'];
-	 	$data['user_info'] = $this->user_model->getInfo($data['id']);
-	 	$data['title'] = "Login";
-	   
-	   $this->load->view('header/header_view', $data);
-	   $this->load->helper(array('form'));
-	   $this->load->view('login_view');
-	   $this->load->view('footer/footer_view');
+	 	if($this->session->userdata('logged_in'))
+	 	{
+		 	
+			
+			 redirect('dashboard');
+			 //If session, redirect to dashboard page
+			 var_dump($this->session->userdata());
 		}else{
-			//If session, redirect to dashboard page
-			 redirect('dashboard', 'refresh');
+			
+			$session_data = $this->session->userdata('logged_in');
+		 	$data['username'] = $session_data['username'];
+		 	$data['id'] = $session_data['id'];
+		 	$data['user_info'] = $this->user_model->getInfo($data['id']);
+		 	$data['title'] = "Login";
+		   
+		   $this->load->view('header/header_view', $data);
+		   $this->load->helper(array('form'));
+		   $this->load->view('login_view');
+		   $this->load->view('footer/footer_view');
 		}
 	 }
+
+	 public function logout() {
+            $this->session->sess_destroy();
+            redirect('login');
+        }
 
 }

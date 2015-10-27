@@ -18,7 +18,7 @@
 
 	</div>
 	<div id="content">
-	
+	<a href="login/logout">Log Out</a>
 		<div class="wraper_content">
 			<div id="folders">
 				<div class="main_title_folders">Folders: </div>

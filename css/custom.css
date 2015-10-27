@@ -182,6 +182,7 @@ body{
 .main_title_folders{
 	padding-bottom: 33px;
 	font-size: 18px;
+
 }
 
 .folder{
@@ -189,9 +190,11 @@ body{
 	min-height: 172px;
 	float: left;
 	padding: 10px;
+	border: 1px solid #d9d9d9;
 }
 .folder:hover{
 	background-color: #d3d3d3;
+	border: 1px solid #93babb;
 }
 .folder_img{
 	background-image: url('../img/folder.png');
@@ -223,9 +226,11 @@ body{
 	height: 172px;
 	float: left;
 	padding: 10px;
+	border: 1px solid #d9d9d9;
 }
 .file:hover{
 	background-color: #d3d3d3;
+	border: 1px solid #93babb;
 }
 .file_img{
 
