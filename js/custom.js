@@ -6,8 +6,8 @@ $(document).ready(function(){
 
     $(".folder").mouseover(function(){
 
-
     	$(this).find(".folder_img").stop().animate({ marginTop: "-5px" }, 200);
+        
 
     });
     $(".folder").mouseout(function(){
@@ -26,7 +26,7 @@ $(document).ready(function(){
 
 
     	$(this).find(".file_img").stop().animate({ marginTop: "5px" }, 200);
-
+         
     });
 
 
